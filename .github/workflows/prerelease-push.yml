@@ -1,4 +1,4 @@
-name: Package and Publish Pre-Release on Push
+name: Package and Publish Pre-Release
 
 on:
   push:
@@ -65,6 +65,8 @@ jobs:
           sha1sum ../java-edition-${{ env.tag }}.zip > ../java-edition-${{ env.tag }}.zip.sha1
           echo "Created archive: java-edition-${{ env.tag }}.zip"
           echo "SHA1 checksum: $(cat ../java-edition-${{ env.tag }}.zip.sha1)"
+          echo "SHA1=$(cat ../java-edition-${{ env.tag }}.zip.sha1 | cut -d' ' -f1)" >> $GITHUB_ENV
+        
 
       - name: Upload Build Artifact to Actions
         uses: actions/upload-artifact@v6
@@ -79,7 +81,7 @@ jobs:
         with:
           tag: ${{ env.tag }}
           name: 预发布版本 - ${{ env.tag }}
-          body: "此预发布版本由Github Action自动构建。\n基础版本: ${{ env.BASE_VERSION }}\nSHA1: $(cat ./java-edition-${{ env.tag }}.zip.sha1 | cut -d' ' -f1)"
+          body: "此预发布版本由Github Action自动构建。\n基础版本: ${{ env.BASE_VERSION }}\nSHA1: ${{ env.SHA1 }}"
           draft: false
           prerelease: true
           makeLatest: true
