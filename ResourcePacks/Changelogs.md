@@ -4,6 +4,11 @@
 
 - 由于存档进行重置，计划变更为收集意见中
 
+### r1.10.4 repatched.1 `2025/12/31`
+
+- 此版本由 `HelveticaVolubi` 构建
+- 此版本移除了pool.png中的QQ群号内容（MS时期遗产）---MT4
+
 ### r1.10.4 `2025/12/30`
 
 - 此版本由 `HelveticaVolubi` 构建，为Restore后第一个构建版
