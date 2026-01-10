@@ -1,0 +1,11 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "minecraft:font/ascii.png",
+      "height": 9,
+      "ascent": 7,
+      "color": "#FFFFFF"
+    }
+  ]
+}
