@@ -2,7 +2,7 @@
   "ui.button.click": {
     "sounds": [
       {
-        "name": "others/buttonclick",
+        "name": "extra/ui/buttonclick",
         "stream": true,
         "weight": 1000
       }
